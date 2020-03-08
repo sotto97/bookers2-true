@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   }
 
   root to: 'homes#top'
-
   get 'home/about' => 'homes#about'
 
   resources :users, only: [:show, :index, :edit, :update] do
-    resource :relationships, only: [:show, :index]
+    resource :relationships, only: [:create, :destroy]
+    get 'follows' => 'relationships#follower', as: 'follows'
+    get 'followers' => 'relationships#followed', as: 'followers'
   end
 
   resources :books do
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
     resource :book_comments, only: [:create, :destroy]
   end
 
-  resources :relationships, only: [:create, :destroy]
+  resources :searches
+
 end
