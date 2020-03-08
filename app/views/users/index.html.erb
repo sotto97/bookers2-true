@@ -1,14 +1,5 @@
 <!-- 検索フォーム 後にrender -->
-<div class="container">
-<h2>Users Search</h2>
-<%= form_for(searches_path, :method => 'get') do |f| %>
-		<%= f.text_field :search %>
-		<%= f.select :search, ([["User","perfect_match"],["Book","backward_match"]]) %>
-		<%= f.select :search, ([["完全一致","perfect_match"],["後方一致","backward_match"],["前方一致","forward_match"]]) %>
-		<%= f.submit 'Search', :name => 'nill' %>
-<% end %>
-<!-- body部分 -->
-</div>
+
 
 <div class="container">
 	<div class="row">

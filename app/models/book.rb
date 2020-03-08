@@ -10,9 +10,4 @@ class Book < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-
-  def self.search(search)
-    return Book.all unless search
-    Book.where(['title LIKE ?', "%#{search}%"])
-  end
 end
