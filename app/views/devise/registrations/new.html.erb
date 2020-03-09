@@ -14,7 +14,27 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, class: "email" %>
   </div>
+  <!-- 住所 -->
+  <div class="field">
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode, autofocus: true, class: "postcode" %>
+  </div>
 
+  <div class="field">
+    <%= f.label :prefecture %><br />
+    <%= f.text_field :prefecture, autofocus: true, class: "prefecture" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, class: "city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building %><br />
+    <%= f.text_field :building, autofocus: true, class: "building" %>
+  </div>
+  <!-- 住所 -->
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
