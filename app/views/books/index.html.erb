@@ -34,15 +34,15 @@
 						</td>
 						<td><%= link_to book.title, book, class: "book_#{book.id}" %></td>
 						<td><%= book.body %></td>
-						<td>
+						<td><!-- classとidを追加 -->
 							<% if book.favorited_by?(current_user) %>
-						    <%= link_to book_favorites_path(book), method: :delete do %>
-						      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+						    <%= link_to book_favorites_path(book, redirect_id: 0), method: :delete, remote: true, class:"fav" do %>
+						      <i class="fa fa-heart" id="like-<%= book.id %>" aria-hidden="true" style="color: red;"></i>
 						      <%= book.favorites.count %> いいね
 						    <% end %>
 							<% else %>
-						    <%= link_to book_favorites_path(book), method: :post do %>
-						      <i class="fa fa-heart-o" aria-hidden="true"></i>
+						    <%= link_to book_favorites_path(book, redirect_id: 0), method: :post, remote: true, class:"fav" do %>
+						      <i class="fa fa-heart-o" id="like-<%= book.id %>" aria-hidden="true"></i>
 						      <%= book.favorites.count %> いいね
 						    <% end %>
 							<% end %>
