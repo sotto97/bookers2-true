@@ -22,17 +22,17 @@
 
   <div class="field">
     <%= f.label :prefecture %><br />
-    <%= f.text_field :prefecture, autofocus: true, class: "prefecture" %>
+    <%= f.text_field :prefecture_code, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県' %><br>
   </div>
 
   <div class="field">
     <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true, class: "city" %>
+    <%= f.text_field :address_city %>
   </div>
 
   <div class="field">
-    <%= f.label :building %><br />
-    <%= f.text_field :building, autofocus: true, class: "building" %>
+    <%= f.label :street %><br />
+    <%= f.text_field :address_street %>
   </div>
   <!-- 住所 -->
   <div class="field">

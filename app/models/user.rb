@@ -33,9 +33,11 @@ class User < ApplicationRecord
   validates :name, length: {maximum: 20, minimum: 2}
   validates :introduction, length: {maximum: 50}
 
+  #継承した Model (つまりUser Model) で、都道府県コードを扱うことができます。
   include JpPrefecture
   jp_prefecture :prefecture_code
 
+  #この記述により県が拾える。
   def prefecture_name
     JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
   end
