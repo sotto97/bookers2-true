@@ -25,10 +25,9 @@ class UsersController < ApplicationController
   		render "edit"
   	end
   end
-
   private
   def user_params
-  	params.require(:user).permit(:name, :introduction, :profile_image, :postcode, :prefecture_name, :address_city, :address_street)
+  	params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
   #url直接防止　メソッドを自己定義してbefore_actionで発動。
