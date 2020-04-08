@@ -12,12 +12,15 @@ Rails.application.routes.draw do
     get 'follows' => 'relationships#follower', as: 'follows'
     get 'followers' => 'relationships#followed', as: 'followers'
   end
+  get '/search', to: 'searches#search'
 
   resources :books do
     resource :favorites, only: [:create, :destroy]
     resource :book_comments, only: [:create, :destroy]
   end
 
-  get '/search', to: 'searches#search'
+  # scope :admin do
+  #   resources :books
+  # end
 
 end

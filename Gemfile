@@ -78,3 +78,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem 'jp_prefecture'
 gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2'
+end
